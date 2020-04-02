@@ -31,7 +31,7 @@
 
 
 # MCU name
-MCU = atmega323
+MCU = atmega328pb
 
 # Output format. (can be srec, ihex, binary)
 FORMAT = ihex
@@ -47,7 +47,8 @@ OPT = s
 # List C source files here. (C dependencies are automatically generated.)
 DEMO_DIR = ../Common/Minimal
 SOURCE_DIR = ../../Source
-PORT_DIR = ../../Source/portable/GCC/ATMega323
+DFP_DIR = "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.4.331\include"
+PORT_DIR = ../../Source/portable/GCC/AVR8
 
 SRC	= \
 main.c \
@@ -103,7 +104,7 @@ DEBUG_LEVEL=-g
 WARNINGS=-Wall -Wextra -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-align -Wsign-compare \
 		-Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wunused
 
-CFLAGS = -D GCC_MEGA_AVR -I. -I../../Source/include -I../Common/include  \
+CFLAGS = -D GCC_MEGA_AVR -I. -I../../Source/include -I../Common/include  -I$(DFP_DIR) \
 $(DEBUG_LEVEL) -O$(OPT) \
 -fsigned-char -funsigned-bitfields -fpack-struct -fshort-enums \
 $(WARNINGS) \

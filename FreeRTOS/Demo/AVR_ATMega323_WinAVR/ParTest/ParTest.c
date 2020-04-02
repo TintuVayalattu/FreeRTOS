@@ -40,6 +40,8 @@ Changes from V2.6.0
 #include "FreeRTOS.h"
 #include "task.h"
 #include "partest.h"
+#include <avr/io.h>
+#include <avr/builtins.h>
 
 /*-----------------------------------------------------------
  * Simple parallel port IO routines.
